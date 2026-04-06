@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  fast-code:
+    build: .
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - ANTHROPIC_MODEL=${ANTHROPIC_MODEL:-claude-sonnet-4-20250514}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
+      - AUTH_TOKEN=${AUTH_TOKEN:-}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - MAX_SESSIONS=${MAX_SESSIONS:-10}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
+    volumes:
+      - fast-code-data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
+
+volumes:
+  fast-code-data:
