@@ -8,12 +8,9 @@ An open-source AI coding assistant: a **FastAPI** backend with a **LangGraph** a
 1. Configure `.env` with a valid API key, then run: `uvicorn app.main:app --reload --host 0.0.0.0 --port 8000`
 2. Open **http://localhost:8000** in your browser.
 3. Show a short flow: e.g. new chat → send a message → watch streaming text and tool cards (toggle theme or mode if you want extra polish).
-4. Capture the **browser window** only (cropped), **15–45 seconds** is usually enough. Aim for **width ≤ 1280px** and **under ~5–8 MB** so the repo stays light.
-5. Export as **GIF** (e.g. [Peek](https://github.com/phw/peek) on Linux, [ScreenToGif](https://www.screentogif.com/) on Windows, macOS **QuickTime** + convert with `ffmpeg`, or OBS + export).
-6. Save the file as **`fast-code/docs/demo.gif`** and commit it.
+![fast-code](https://github.com/user-attachments/assets/7b9b58f8-261c-4adb-8e23-866e5b68eb6a)
 
-Example `ffmpeg` conversion from a short MP4:  
-`ffmpeg -i demo.mp4 -vf "fps=10,scale=800:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 docs/demo.gif`
+
 
 ---
 
