@@ -235,12 +235,10 @@ fast-code/
 
 Runtime artifacts (e.g. local DB, `data/` workspace files, `.venv`) should stay untracked; see **`.gitignore`**.
 
-### Security before you publish
+### Security before you contribute
 
 - **Never commit** `.env` — it is listed in `.gitignore`; keep API keys only on your machine or in CI secrets.
 - If a key was ever pasted into a tracked file or a public issue, **revoke it** in the provider dashboard and create a new one.
-- Optional: run `git log --all --full-history -- .env` (and `git log -p -- path`) before the first public push to confirm `.env` never entered history.
-- Set **`AUTH_TOKEN`** in production if the API is exposed beyond localhost.
 
 ---
 
